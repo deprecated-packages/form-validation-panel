@@ -1,0 +1,80 @@
+<style>
+#nette-debug-panel-Media33-FormValidationPanel-FormValidationPanel {
+	display: none !important;
+}
+.nette-form-validation-tab img + img {
+	display: none;
+}
+.nette-form-validation-disabled .nette-form-validation-tab img {
+	display: none;
+}
+.nette-form-validation-disabled .nette-form-validation-tab img + img {
+	display: inline;
+}
+</style>
+<script>
+(function() {
+
+	var createCookie = function(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else var expires = "";
+		document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	var readCookie = function(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	}
+
+	var initialize = function(el) {
+		el.bind('click', function() {
+			if (el.hasClass('nette-form-validation-disabled')) {
+				el.removeClass('nette-form-validation-disabled');
+				createCookie('nette-form-validation-disabled', 0);
+			} else {
+				el.addClass('nette-form-validation-disabled');
+				createCookie('nette-form-validation-disabled', 1);
+			}
+			var disabled = el.hasClass('nette-form-validation-disabled');
+			var inputs = Nette.Query.factory('input');
+			inputs.each(function() {
+				if (this.getAttribute('type') == 'submit') {
+					if (disabled) {
+						this.setAttribute('formnovalidate', true);
+					} else {
+						this.removeAttribute('formnovalidate');
+					}
+				}
+			});
+		});
+
+		if (readCookie('nette-form-validation-disabled') == 1) {
+			el[0].click();
+		}
+	};
+
+	var spans = Nette.Query.factory('.nette-form-validation-tab');
+	spans.each(function() {
+		var el = Nette.Query.factory(this);
+		if (!el.data().initialized) {
+			el.data().initialized = true;
+			if (el.closest('ul').hasClass('nette-previous')) {
+				el.closest('li').hide();
+			} else {
+				initialize(el.closest('a'));
+			}
+		}
+	});
+
+})();
+</script>
