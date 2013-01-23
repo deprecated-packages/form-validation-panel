@@ -1,6 +1,6 @@
 <?php
 
-namespace Media33\FormValidationPanel;
+namespace Arachne\FormValidationPanel;
 
 /**
  * @author Jáchym Toušek
@@ -12,7 +12,7 @@ class FormValidationPanelExtension extends \Nette\Config\CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 		if ($builder->parameters['debugMode']) {
-			$class->methods['initialize']->addBody('Nette\Diagnostics\Debugger::$bar->addPanel(new Media33\FormValidationPanel\FormValidationPanel);');
+			$class->methods['initialize']->addBody('Nette\Diagnostics\Debugger::$bar->addPanel(new Arachne\FormValidationPanel\FormValidationPanel);');
 		}
 	}
 

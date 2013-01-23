@@ -1,6 +1,6 @@
 <?php
 
-namespace Media33\FormValidationPanel;
+namespace Arachne\FormValidationPanel;
 
 /**
  * @author Jáchym Toušek <enumag@gmail.com>
@@ -33,7 +33,7 @@ class FormValidationPanel extends \Nette\Object implements \Nette\Diagnostics\IB
 
 	/**
 	 * @param string $file
-	 * @param array $vars
+	 * @param mixed[] $vars
 	 * @return string
 	 */
 	public static function render($file, $vars = array())

@@ -1,8 +1,10 @@
 {
-	"name": "enumag/nette-form-validation-panel",
-	"description": "Nette DebugBar panel that allows you to disable and enable Nette JS validation.",
-	"keywords": [ "nette", "validation", "panel" ],
-	"license": [ "WTFPL" ],
+	"name": "arachne/form-validation-panel",
+    "type": "library",
+	"description": "DebugBar tab that allows you to disable and enable Nette JS validation.",
+	"keywords": [ "nette", "arachne", "validation", "panel" ],
+   	"homepage": "http://enumag.cz",
+	"license": [ "BSD-3-Clause", "GPL-2.0", "GPL-3.0" ],
 	"authors": [
 		{
 			"name": "Jáchym Toušek",
@@ -11,13 +13,13 @@
 		}
 	],
 	"require": {
-		"php": ">=5.3.2",
-		"nette/nette": "*"
+		"php": ">=5.4.0",
+		"nette/nette": "@dev"
 	},
 	"autoload": {
 		"psr-0": {
-			"Media33\\FormValidationPanel": ""
+			"Arachne\\FormValidationPanel": ""
 		}
 	},
-	"target-dir": "Media33\\FormValidationPanel"
+	"target-dir": "Arachne"
 }
