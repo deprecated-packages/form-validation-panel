@@ -1,9 +1,9 @@
 {
 	"name": "arachne/form-validation-panel",
-    "type": "library",
-	"description": "DebugBar tab that allows you to disable and enable Nette JS validation.",
-	"keywords": [ "nette", "arachne", "validation", "panel" ],
-   	"homepage": "http://enumag.cz",
+	"type": "library",
+	"description": "Nette DebugBar tab that allows you to disable and enable Nette JS forms validation.",
+	"keywords": [ "nette", "arachne", "forms", "validation" ],
+	"homepage": "http://enumag.cz",
 	"license": [ "BSD-3-Clause", "GPL-2.0", "GPL-3.0" ],
 	"authors": [
 		{
@@ -18,8 +18,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Arachne\\FormValidationPanel": ""
+			"Arachne\\FormValidationPanel": "src/"
 		}
-	},
-	"target-dir": "Arachne"
+	}
 }
