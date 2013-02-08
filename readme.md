@@ -1,7 +1,7 @@
 #Arachne Form Validation panel#
 
 ## Requirements ##
-[Nette Framework 2.1](http://nette.org) or higher and PHP 5.3 or higher.
+[Nette Framework 2.1](http://nette.org) or higher and PHP 5.4 or higher.
 
 ## Documentation ##
 Simple DebugBar panel to disable and enable Nette JS validation.
