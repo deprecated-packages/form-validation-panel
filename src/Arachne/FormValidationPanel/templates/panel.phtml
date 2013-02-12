@@ -44,9 +44,11 @@
 		el.bind('click', function(e) {
 			e.preventDefault(); // prevents hash addition to url
 			if (el.hasClass('nette-form-validation-disabled')) {
+				el.find('span').dom().setAttribute('title', 'JS validation is ON');
 				el.removeClass('nette-form-validation-disabled');
 				createCookie('nette-form-validation-disabled', 0);
 			} else {
+				el.find('span').dom().setAttribute('title', 'JS validation is OFF');
 				el.addClass('nette-form-validation-disabled');
 				createCookie('nette-form-validation-disabled', 1);
 			}
