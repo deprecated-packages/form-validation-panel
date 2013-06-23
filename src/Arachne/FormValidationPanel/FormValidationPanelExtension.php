@@ -13,7 +13,7 @@ namespace Arachne\FormValidationPanel;
 /**
  * @author Jáchym Toušek
  */
-class FormValidationPanelExtension extends \Nette\Config\CompilerExtension
+class FormValidationPanelExtension extends \Nette\DI\CompilerExtension
 {
 
 	public function afterCompile(\Nette\PhpGenerator\ClassType $class)
