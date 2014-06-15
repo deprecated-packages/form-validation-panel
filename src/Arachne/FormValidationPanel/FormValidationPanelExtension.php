@@ -20,7 +20,7 @@ class FormValidationPanelExtension extends \Nette\DI\CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 		if ($builder->parameters['debugMode']) {
-			$class->methods['initialize']->addBody('Nette\Diagnostics\Debugger::getBar()->addPanel(new Arachne\FormValidationPanel\FormValidationPanel);');
+			$class->methods['initialize']->addBody('Tracy\Debugger::getBar()->addPanel(new Arachne\FormValidationPanel\FormValidationPanel);');
 		}
 	}
 

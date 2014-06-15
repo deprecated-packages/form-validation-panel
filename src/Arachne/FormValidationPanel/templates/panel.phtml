@@ -53,7 +53,7 @@
 				createCookie('nette-form-validation-disabled', 1);
 			}
 			var disabled = el.hasClass('nette-form-validation-disabled');
-			var inputs = Nette.Query.factory('input');
+			var inputs = Tracy.Query.factory('input');
 			inputs.each(function() {
 				if (this.getAttribute('type') == 'submit') {
 					if (disabled) {
@@ -70,9 +70,9 @@
 		}
 	};
 
-	var spans = Nette.Query.factory('.nette-form-validation-tab');
+	var spans = Tracy.Query.factory('.nette-form-validation-tab');
 	spans.each(function() {
-		var el = Nette.Query.factory(this);
+		var el = Tracy.Query.factory(this);
 		if (!el.data().initialized) {
 			el.data().initialized = true;
 			if (el.closest('ul').hasClass('nette-previous')) {

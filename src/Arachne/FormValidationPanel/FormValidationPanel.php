@@ -13,7 +13,7 @@ namespace Arachne\FormValidationPanel;
 /**
  * @author Jáchym Toušek <enumag@gmail.com>
  */
-class FormValidationPanel extends \Nette\Object implements \Nette\Diagnostics\IBarPanel
+class FormValidationPanel extends \Nette\Object implements \Tracy\IBarPanel
 {
 
 	/**
@@ -26,7 +26,7 @@ class FormValidationPanel extends \Nette\Object implements \Nette\Diagnostics\IB
 			'src' => function ($file) {
 				return \Nette\Templating\Helpers::dataStream(file_get_contents($file));
 			},
-			'esc' => callback('Nette\Templating\Helpers::escapeHtml')
+			'esc' => \Nette\Utils\Callback::closure('Nette\Templating\Helpers::escapeHtml')
 		));
 	}
 
@@ -47,7 +47,9 @@ class FormValidationPanel extends \Nette\Object implements \Nette\Diagnostics\IB
 	public static function render($file, $vars = array())
 	{
 		ob_start();
-		\Nette\Utils\LimitedScope::load(str_replace('/', DIRECTORY_SEPARATOR, $file), $vars);
+		foreach ($vars as $__k => $__v) $$__k = $__v;
+		unset($__k, $__v);
+		include str_replace('/', DIRECTORY_SEPARATOR, $file);
 		return ob_get_clean();
 	}
 
