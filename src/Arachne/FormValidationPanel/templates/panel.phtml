@@ -1,5 +1,5 @@
 <style>
-#nette-debug-panel-Arachne-FormValidationPanel-FormValidationPanel {
+#tracy-debug-panel-Arachne-FormValidationPanel-FormValidationPanel {
 	display: none !important;
 }
 .nette-form-validation-tab img + img {
@@ -75,7 +75,7 @@
 		var el = Tracy.Query.factory(this);
 		if (!el.data().initialized) {
 			el.data().initialized = true;
-			if (el.closest('ul').hasClass('nette-previous')) {
+			if (el.closest('ul').hasClass('tracy-previous')) {
 				el.closest('li').hide();
 			} else {
 				initialize(el.closest('a'));
